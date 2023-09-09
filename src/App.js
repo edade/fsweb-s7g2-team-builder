@@ -82,7 +82,7 @@ function App() {
       .min(3, "en az 3 karakter olmalı"),
     email: Yup.string().required("giriniz").email("Geçerli bir email giriniz!"),
     rol: Yup.string().required("Görevi giriniz"),
-    terms: Yup.boolean.oneOf([true], "Şartları kabul ediniz"),
+    terms: Yup.boolean().oneOf([true], "Şartları kabul ediniz"),
   });
 
   const editMember = (member) => {

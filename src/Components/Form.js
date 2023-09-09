@@ -1,5 +1,3 @@
-import * as Yup from "yup";
-
 const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
   return (
     <form onSubmit={submitHandler}>

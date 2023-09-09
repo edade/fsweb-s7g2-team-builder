@@ -3,7 +3,9 @@
   width: 40%;
   margin: auto;
 }
-
+.error {
+  color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
