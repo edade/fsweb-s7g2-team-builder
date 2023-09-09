@@ -49,8 +49,6 @@ function App() {
           return member;
         }
       });
-
-      updatedMember = { ...formData };
       setMembers(updatedMember);
     } else {
       const newMember = {
@@ -75,31 +73,29 @@ function App() {
   };
   return (
     <div>
-      <BrowserRouter>
-        <header>
-          <nav className="d-flex gap-5 p-3">
-            <NavLink to="/" exact>
-              Home
-            </NavLink>
-            <NavLink to="/signup" exact>
-              New Member
-            </NavLink>
-          </nav>
-        </header>
-        <Switch>
-          <Route path="/" exact>
-            <Members members={members} editMember={editMember} />
-          </Route>
+      <header>
+        <nav className="d-flex gap-5 p-3">
+          <NavLink to="/" exact>
+            Home
+          </NavLink>
+          <NavLink to="/signup" exact>
+            New Member
+          </NavLink>
+        </nav>
+      </header>
+      <Switch>
+        <Route path="/" exact>
+          <Members members={members} editMember={editMember} />
+        </Route>
 
-          <Route path="/signup" exact>
-            <Form
-              submitHandler={submitHandler}
-              changeHandler={changeHandler}
-              formData={formData}
-            />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+        <Route path="/signup" exact>
+          <Form
+            submitHandler={submitHandler}
+            changeHandler={changeHandler}
+            formData={formData}
+          />
+        </Route>
+      </Switch>
     </div>
   );
 }
