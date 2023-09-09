@@ -1,4 +1,6 @@
-const Form = ({ changeHandler, submitHandler, formData }) => {
+import * as Yup from "yup";
+
+const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
   return (
     <form onSubmit={submitHandler}>
       <label>
@@ -11,6 +13,7 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
+      <div className="error">{errors.name}</div>
       <label>
         email:
         <input
@@ -21,6 +24,7 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
+      <div className="error">{errors.email}</div>
       <label>
         rol:
         <input
@@ -31,7 +35,20 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
-      <button type="submit">Submit</button>
+      <div className="error">{errors.rol}</div>
+      <label>
+        <input
+          type="checkbox"
+          name="terms"
+          checked={formData.terms}
+          onChange={changeHandler}
+        />
+        Şartları kabul ediyorum
+      </label>
+      <div className="error">{errors.terms}</div>
+      <button type="submit" disabled={!isValid}>
+        Submit
+      </button>
     </form>
   );
 };
