@@ -4,6 +4,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         Name:
         <input
+          data-cy="name-input"
           type="text"
           name="name"
           placeholder="name"
@@ -15,6 +16,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         email:
         <input
+          data-cy="email-input"
           type="email"
           name="email"
           placeholder="email"
@@ -26,6 +28,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         rol:
         <input
+          data-cy="rol-input"
           type="text"
           name="rol"
           placeholder="role"
